@@ -1,9 +1,11 @@
-== Splunk User Groups
+= Splunk User Groups
 
 Simple rails app to allow users to check in at Splunk User Groups.
 
-= To install locally
+== To install locally
 
-Requires the Splunk Ruby SDK (http://dev.splunk.com/ruby)
+Requires the Splunk Ruby SDK to be installed (http://dev.splunk.com/ruby)
 
-You will also need a Splunk instance running the Splunk User Group Admin App (https://github.com/himynamesdave/usergroup_splunk_app). Add indexer location here: (https://github.com/himynamesdave/splunkusergroups/blob/master/app/models/concerns/splunk_service.rb) Add indexer credentials here (https://github.com/himynamesdave/splunkusergroups/blob/master/config/secrets.yml)
+Add indexer location here: (https://github.com/himynamesdave/splunkusergroups/blob/master/app/models/concerns/splunk_service.rb) Add indexer credentials here (https://github.com/himynamesdave/splunkusergroups/blob/master/config/secrets.yml). Make sure port 8089 is open to send / recieve data.
+
+You will also need a Splunk instance running the Splunk User Group Admin App (https://github.com/himynamesdave/usergroup_splunk_app). The admin app creates the Splunk Key Value Collections required to populate variables in app (i.e job roles listed for check-in).
