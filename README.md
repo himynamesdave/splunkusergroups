@@ -10,7 +10,11 @@ Simple rails app to allow users to check in at Splunk User Groups.
 
 ## To install locally
 
+**Dependencies**
+
 [Requires the Splunk Ruby SDK to be installed](http://dev.splunk.com/ruby).
+
+**Splunk Indexer config**
 
 [Add indexer location here](https://github.com/himynamesdave/splunkusergroups/blob/master/app/models/concerns/splunk_service.rb).
 
