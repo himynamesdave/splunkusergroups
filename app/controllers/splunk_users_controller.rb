@@ -43,12 +43,15 @@ class SplunkUsersController < ApplicationController
       end
       @meetup_url = @group["addUserGroupMeetupPage"]
       @city = @group["addUserGroupCity"]
+      @event_id = @group["addUserGroupCode"]
       @use_cases = @user.use_cases
       @products = @user.products
       @roles = @user.job_roles
     end
 
     def user_attributes
-      params.require(:splunk_user).permit(:name, :email, :notes, :role, :splunk_products => [], :splunk_use_cases => []).merge({city: @city})
+      params.require(:splunk_user).
+        permit(:name, :email, :notes, :role, :splunk_products => [], :splunk_use_cases => []).
+        merge({city: @city, event_id: @event_id})
     end
 end

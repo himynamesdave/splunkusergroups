@@ -1,7 +1,7 @@
 class SplunkUser < ActiveRecord::Base
   include Concerns::SplunkService
 
-  attr_accessor :name, :email, :role, :splunk_products, :splunk_use_cases, :notes, :city
+  attr_accessor :name, :email, :role, :splunk_products, :splunk_use_cases, :notes, :city, :event_id
 
   validates_presence_of :name, :email, :city
   validates_format_of :email, with: /\A.+@.+\z/, message: "must be a valid email"
@@ -11,8 +11,10 @@ class SplunkUser < ActiveRecord::Base
 
   def get_user_group(code)
     collection = splunk_get(UserGroupSplunkCollection)
-    collection.keep_if {|el| el["addUserGroupCode"].to_s.downcase == code.downcase}
-    collection.first
+    if collection 
+      collection.keep_if {|el| el["addUserGroupCode"].to_s.downcase == code.downcase}
+      collection.first
+    end
   end
 
   def job_roles
@@ -47,7 +49,15 @@ class SplunkUser < ActiveRecord::Base
   end
 
   def to_json
-    {notes: notes, name: name, email: email, role: role, products: splunk_products.join(","), use_cases: splunk_use_cases.join(","), group_city: city}.to_json
+    { notes: notes, 
+      name: name, 
+      email: email, 
+      role: role, 
+      products: splunk_products.join(","), 
+      use_cases: splunk_use_cases.join(","), 
+      group_city: city, 
+      event_id: event_id
+    }.to_json
   end
   private
 

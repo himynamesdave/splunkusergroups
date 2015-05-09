@@ -1,0 +1,9 @@
+
+usergroup_app_name: "usergroupmgr_splunk_app"
+splunk_host: "<IDX>"
+
+# Splunk collection names
+usergroup_collection: "usergroupcollection"
+job_role_collection: "jobrolecollection"
+product_collection: "productcollection"
+use_case_collection: "usecasecollection"

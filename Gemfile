@@ -14,6 +14,8 @@ gem 'jquery-rails'
 gem 'font-awesome-rails', '~> 4.3.0'
 gem 'bootstrap-sass'
 
+gem 'figaro'
+
 gem "splunk-sdk-ruby"
 
 gem 'turbolinks'
