@@ -16,7 +16,7 @@ Simple rails app to allow users to check in at Splunk User Groups.
 
 **Splunk Indexer config**
 
-[Add indexer location here](https://github.com/himynamesdave/splunkusergroups/blob/master/app/models/concerns/splunk_service.rb).
+[Add indexer location here](https://github.com/himynamesdave/splunkusergroups/blob/master/config/application.yml).
 
 [Add indexer credentials here](https://github.com/himynamesdave/splunkusergroups/blob/master/config/secrets.yml).
 
