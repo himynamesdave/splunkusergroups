@@ -1,0 +1,48 @@
+%h2 Welcome to the #{@city} Splunk user group!
+= form_for @user, id: "registration-form" do |f|
+  .form-group.name_tooltip{class: user_input_class(:name)}
+    = f.text_field :name, placeholder: "Name", class: "form-control"
+  .form-group.email_tooltip{class: user_input_class(:email)}
+    = f.email_field :email, placeholder: "Email", class: "form-control"
+
+  .form-group.role_tooltip{class: user_input_class(:role)}
+    %label I work in:
+    - @roles.each do |role|
+      - name = role[:name]
+      %label
+        = radio_button_tag "splunk_user[role]", role[:name], @user.role == name
+        = role[:name] 
+
+  .form-group.splunk_products_tooltip{class: user_input_class(:splunk_products)}
+    %label I use these Splunk products:
+    - @products.each do |product|
+      - name = product[:name]
+      %label
+        = check_box_tag "splunk_user[splunk_products][]", product[:name], (@user.splunk_products.present? and @user.splunk_products.include?(name))
+        = product[:name]
+
+  .form-group.splunk_use_cases_tooltip{class: user_input_class(:splunk_use_cases)}
+    %label My main reason for using Splunk is:
+    - @use_cases.each do |use_case|
+      - name = use_case[:name]
+      %label 
+        = check_box_tag "splunk_user[splunk_use_cases][]", use_case[:name], (@user.splunk_use_cases.present? and @user.splunk_use_cases.include?(name))
+        = use_case[:name]
+
+  = hidden_field_tag :code, @code
+  = hidden_field_tag :city, @city
+
+  .form-group
+    %label Help us make the user group even more awesome. In a few words tell us what you want to see, what we could do better, why you came today, etc...
+    = f.text_area :notes, class: "form-control"
+
+  = submit_tag :check_in, value: "Check In", class: "btn btn-success"
+
+:javascript
+  #{
+    arr = []
+    @user.errors.each do |atr, msg| 
+      arr << "$('.#{atr}_tooltip').tooltip({title: \"#{msg}\", placement: 'top'});"
+    end
+    arr.join(" ")
+  }

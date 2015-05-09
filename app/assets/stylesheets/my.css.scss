@@ -1,0 +1,142 @@
+body {
+  background-color: #66a638;
+}
+
+.tooltip-inner {
+  background-color: #a94442 !important;
+}
+
+.tooltip-arrow {
+  border-top-color: #a94442 !important;
+}
+.content {
+  color: #66a638;
+  background-color: white;
+  margin-top: 50px;
+  text-align: center;
+  padding: 20px 15px;
+  border-radius: 3px;
+
+  .undertext {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .text {
+    // color: black;
+    font-size: 21px;
+    margin: 30px;
+  }
+
+  .flash {
+    margin: 10px 0;
+    border: 3px solid red;
+    padding: 5px;
+    font-size: 17px;
+  }
+
+  h1, h2, h3, h4 {
+    margin: 3px;
+  }
+
+  h1 {
+    font-weight: bold;
+  }
+
+  .form-group label:first-child {
+    color: #66a638;
+    font-weight: bold;
+  }
+
+  form {
+    margin: 20px auto;
+    width: 80%;
+    text-align: left;
+    label {
+      display: block;
+      font-weight: normal;
+      // color: black;
+    }
+
+    .has-error label:first-child {
+      color: #a94442;
+    }
+
+    .has-error .form-control {
+      background-color: #fee;
+    }
+
+    .label-text {
+      display: block;
+      clear: both;
+      margin: 10px 0;
+    }
+    // input, textarea {
+    //   margin: 10px 0;
+    // } 
+
+    // input[type="text"], textarea {
+    //   width: 90%;
+    //   height: 25px;
+    //   display: block;
+    //   font-size: 23px;
+    //   background-color: #fff;
+    //   background-image: none;
+    //   border: 3px solid #00a553;
+    //   border-radius: 1px;
+    //   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    //   color: #555;
+    //   display: block;
+    //   font-size: 14px;
+    //   height: 34px;
+    //   line-height: 1.42857;
+    //   padding: 6px 12px;
+    //   transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    // }
+
+    textarea {
+      height: 70px;
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      width: 65%;
+      display: block;
+      font-size: 23px;
+      margin: 10px auto;
+    }
+
+    input[type="submit"]:hover {
+      cursor: pointer;
+      background-color: #00a553;
+    }
+  }
+}
+
+i.fa {
+  color: #66a638;
+  font-size: 11em;
+  margin-bottom: 10px;
+}
+
+
+// ::-webkit-input-placeholder {
+//   font-size: 27px;
+//   color: grey;
+//   text-align: center;
+// }
+// :-moz-placeholder { /* older Firefox*/
+//   font-size: 27px;
+//   color: grey;
+//   text-align: center;
+// }
+// ::-moz-placeholder { /* Firefox 19+ */ 
+//   font-size: 27px;
+//   color: grey;
+//   text-align: center;
+// } 
+// :-ms-input-placeholder { 
+//   font-size: 27px;
+//   color: grey;
+//   text-align: center;
+// }

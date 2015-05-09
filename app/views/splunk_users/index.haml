@@ -1,0 +1,7 @@
+= fa_icon "map-marker"
+%h1 Hello, Splunker!
+%h4 Check into a Splunk User group
+= form_tag validate_key_splunk_users_path do 
+  .form-group= text_field_tag :code, params[:code], placeholder: "event id", class: "form-control"
+  = submit_tag :check_in, value: "Check In", class: "btn btn-success"
+Ask the organiser of the event for the code.
