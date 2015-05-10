@@ -18,6 +18,8 @@
       <script src="ie/html5.js" cache="false"></script>
       <script src="ie/excanvas.js" cache="false"></script>
   %body.container
+    .header
+      = link_to "Powered by Splunk>Cloud.", "http://www.splunk.com/en_us/products/splunk-cloud.html", target: "_blank"
     .col-md-6.content.col-md-offset-3
       - if flash.any?
         .alert.alert-danger.alert-dismissible 

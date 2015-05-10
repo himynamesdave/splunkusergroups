@@ -1,0 +1,20 @@
+.stats
+  .section
+    %h2 Super User Badge 
+    .under-header Number of check-ins
+    .list
+      .item= @checkins
+  .section
+    %h2 Explorer Badge 
+    .under-header Meetups attended
+    .list
+      - @events.each do |e|
+        .item= e
+  .section
+    %h2 Jet-setter Badge
+    .under-header Cities visited for meetups
+    .list
+      - @cities.each do |c|
+        .item= c
+
+  = render 'shared/back_link'

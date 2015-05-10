@@ -1,0 +1,12 @@
+#stats-modal.modal.fade{"aria-hidden" => "true", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} &times;
+        %h4#myModalLabel.modal-title 
+          %h3 See your data
+      .modal-body
+        = form_tag stats_path, method: :post do 
+          = email_field_tag :email, nil, placeholder: "Email", class: "form-control"
+          = submit_tag "Check", class: "btn btn-default"

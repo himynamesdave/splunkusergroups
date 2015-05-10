@@ -1,5 +1,5 @@
 class SplunkUser < ActiveRecord::Base
-  include Concerns::SplunkService
+  include Concerns::SplunkUserCollections
 
   attr_accessor :name, :email, :role, :splunk_products, :splunk_use_cases, :notes, :city, :event_id
 
@@ -32,7 +32,7 @@ class SplunkUser < ActiveRecord::Base
   def splunk_save
     request_args = {
       resource: ["receivers", "simple"], method: :POST, 
-      query: {source: 'usergroupapp', index: "splunkusergroups"},
+      query: {source: 'usergroupapp', index: "splunkusergroups", "sourcetype" => "json"},
       body: to_json
     }
 
@@ -59,6 +59,7 @@ class SplunkUser < ActiveRecord::Base
       event_id: event_id
     }.to_json
   end
+
   private
 
     def splunk_get(collection, id: nil)

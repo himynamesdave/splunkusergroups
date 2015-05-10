@@ -2,11 +2,9 @@
 
 Simple rails app to allow users to check in at Splunk User Groups.
 
-![Splunk User Group Check-in Index](https://raw.githubusercontent.com/himynamesdave/splunkusergroups/master/app/assets/images/screenshot_index.jpeg)
-
 ![Splunk User Group Check-in](https://raw.githubusercontent.com/himynamesdave/splunkusergroups/master/app/assets/images/screenshot_checkin.jpeg)
 
-![Splunk User Group Check-in Success](https://raw.githubusercontent.com/himynamesdave/splunkusergroups/master/app/assets/images/screenshot_success.jpeg)
+![Splunk User Group Check-in Stats](https://raw.githubusercontent.com/himynamesdave/splunkusergroups/master/app/assets/images/screenshot_stats.jpeg)
 
 ## To install locally
 
