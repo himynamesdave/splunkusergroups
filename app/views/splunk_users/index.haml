@@ -12,11 +12,16 @@ Ask the organiser of the event for the code.
   .line.right
   .line.left
 
-= link_to "See your data", "#", class: "btn btn-default data-button", data: {toggle: "modal", target: "#stats-modal"}
+= link_to "| stats count(meetups_self)", "#", class: "btn btn-default data-button", data: {toggle: "modal", target: "#stats-modal"}
 = render 'shared/stats_form_modal'
 
 %br
 %br
 %br
 
-= link_to "See how this app was built.", "https://github.com/himynamesdave/splunkusergroups", target: "_blank"
+= link_to "| table meetups_all", "http://www.meetup.com/Splunk-Meetups/", target: "_blank"
+
+%br
+%br
+
+= link_to "| eval code=github", "https://github.com/himynamesdave/splunkusergroups", target: "_blank"

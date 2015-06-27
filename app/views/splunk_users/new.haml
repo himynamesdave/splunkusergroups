@@ -3,10 +3,10 @@
   .form-group.name_tooltip{class: user_input_class(:name)}
     = f.text_field :name, placeholder: "Name", class: "form-control"
   .form-group.email_tooltip{class: user_input_class(:email)}
-    = f.email_field :email, placeholder: "Email", class: "form-control"
+    = f.email_field :email, placeholder: "Company Email", class: "form-control"
 
   .form-group.role_tooltip{class: user_input_class(:role)}
-    %label I work in:
+    %label I am:
     - @roles.each do |role|
       - name = role[:name]
       %label
@@ -33,8 +33,12 @@
   = hidden_field_tag :city, @city
 
   .form-group
-    %label Help us make the user group even more awesome. In a few words tell us what you want to see, what we could do better, why you came today, etc...
+    %label In a few words tell us what you want to see, what we could do better, why you came today, etc...
     = f.text_area :notes, class: "form-control"
+  .form-group
+    %label 
+      = check_box_tag "invite_to_slack"
+      = "Check this box if you would like an invite to Splunk’s User Group Slack team"
 
   = submit_tag :check_in, value: "Check In", class: "btn btn-success"
 :javascript

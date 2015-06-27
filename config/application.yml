@@ -1,6 +1,9 @@
 
+slack_team: ""
+slack_channels: ''
+
 usergroup_app_name: "usergroupmgr_splunk_app"
-splunk_host: "<IDX>"
+splunk_host: ""
 
 # Splunk collection names
 usergroup_collection: "usergroupcollection"

@@ -22,8 +22,12 @@ Make sure port 8089 is open to send / recieve data.
 
 You will also need a Splunk instance running the [Splunk User Group Manager App](https://github.com/himynamesdave/usergroupmgr_splunk_app). The admin app creates the Splunk Key Value Collections required to populate variables in app (i.e job roles listed for check-in).
 
-You can also optionally install the [Splunk User Group Stats App](https://github.com/himynamesdave/usergroupstats_splunk_app). This app has been designed to show individual user group owners stats from their own groups (and limit group owners from seeing other Splunk apps / features). To do this:
+**Slack config**
 
-1. Create a Splunk Role for each city and restrict search terms to: group_city=CITY.
-2. Remove permissions for this role for other apps (except User Group Stats App) so that users under this new role cannot read / write to them.
-3. Create a new Splunk user under this role.
+There is also an option for automated Slack invites to be sent out to users who consent. 
+
+To configure this, [provide your Slack API key here](https://github.com/himynamesdave/splunkusergroups/blob/master/config/secrets.yml), and then [Slack team and channels to include them in by default here](https://github.com/himynamesdave/splunkusergroups/blob/master/config/application.yml).
+
+**Google Analytics config**
+
+You should also [add your GA key here](https://github.com/himynamesdave/splunkusergroups/blob/master/views/layouts/application.haml). 

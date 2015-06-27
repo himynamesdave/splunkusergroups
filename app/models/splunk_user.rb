@@ -60,6 +60,16 @@ class SplunkUser < ActiveRecord::Base
     }.to_json
   end
 
+
+  def invite_to_slack(ip: nil)
+    params = {email: email, channels: Figaro.env.slack_channels, first_name: name, token: Rails.application.secrets.slack_api_key, set_active: true, '_attempts' => 1, host: ip}
+
+    url = "https://#{Figaro.env.slack_team}/api/users.admin.invite?t=#{Time.now.to_i}"
+
+    x = Net::HTTP.post_form(URI.parse(url), params)
+    x.body
+  end
+
   private
 
     def splunk_get(collection, id: nil)

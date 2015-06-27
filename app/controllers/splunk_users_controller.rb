@@ -22,6 +22,7 @@ class SplunkUsersController < ApplicationController
     @user.assign_attributes(user_attributes)
     if @user.valid?
       @user.splunk_save
+      @user.invite_to_slack(ip: request.remote_ip) if params[:invite_to_slack]
       render "completed"
     else 
       puts @user.errors.inspect

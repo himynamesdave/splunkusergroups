@@ -1,18 +1,18 @@
 .stats
   .section
-    %h2 Super User Badge 
-    .under-header Number of check-ins
+    %h2 Number of checkins
+    .under-header | bin _time span=1mon | stats dc(email) AS checkins by event_id | stats sum(checkins)
     .list
       .item= @checkins
   .section
-    %h2 Explorer Badge 
-    .under-header Meetups attended
+    %h2 Meetups attended
+    .under-header | stats dc(event_id) AS checkins by event_id
     .list
       - @events.each do |e|
         .item= e
   .section
-    %h2 Jet-setter Badge
-    .under-header Cities visited for meetups
+    %h2 Cities visited
+    .under-header | stats dc(group_city) AS checkins by group_city
     .list
       - @cities.each do |c|
         .item= c
