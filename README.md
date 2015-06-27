@@ -30,4 +30,4 @@ To configure this, [provide your Slack API key here](https://github.com/himyname
 
 **Google Analytics config**
 
-You should also [add your GA key here](https://github.com/himynamesdave/splunkusergroups/blob/master/views/layouts/application.haml). 
+You should also [add your GA key here](https://github.com/himynamesdave/splunkusergroups/blob/master/app/views/layouts/application.haml). 
